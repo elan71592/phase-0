@@ -1,6 +1,6 @@
 ####Paste a link to your [USERNAME].github.io repository.
 
-  [elan71592.github.io]
+  elan71592.github.io or click [HERE](http://elan71592.github.io)
 
 ####Explain how to create a repository on GitHub and clone the repository to your local computer to a non-technical person.
 
