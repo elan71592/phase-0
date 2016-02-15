@@ -25,8 +25,7 @@ Example: ![Site Map](imgs/site-map.png)
 
   My target audience should have an interest in hiring junior developers and also be in a position to do so. I see my site addressing them in a very friendly way. Kind of saying "Hey I'm Elan. Just take a look and poke around. If you like me, contact me. If not, hey let's just connect via linkedin and keep in touch just in case." I want my site to embed my name in the viewers mind. Leaving a good impression is key.
 
-### What is the primary "action" the user should take when coming to your site? Do you want
-###them to search for information, contact you, or see your portfolio? It's ok to have ###several actions at once, or different actions for different kinds of visitors.
+### What is the primary "action" the user should take when coming to your site? Do you want them to search for information, contact you, or see your portfolio? It's ok to have several actions at once, or different actions for different kinds of visitors.
 
   I want my user to automatically feel like they should be contacting me. Straight from the home page. I want there to be this feeling of trust that this person knows what he's doing. Essentially I want to attract users to cold call me as soon as they land on my page.
 
