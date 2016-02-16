@@ -7,8 +7,8 @@
 ### Did you enjoy wireframing your site?
   - I actually very much enjoyed wireframing my site. I enjoy a good challenge and since I'm not very good designing and things that require me to create visual presentations, my imagination runs wild but my skills aren't up to par with being able to actually create what is in my head. Below I am providing two wireframes I made. The first is my home page and the second is my blog page.
 
-[Home Page](imgs/wireframe-index.png)
-[Home Page](imgs/wireframe-blog-index.png)
+![Home Page](imgs/wireframe-index.png)
+![Home Page](imgs/wireframe-blog-index.png)
 
 ### Did you revise your wireframe or stick with your first idea?
   - I revised my wireframe a few times throughout the process.
