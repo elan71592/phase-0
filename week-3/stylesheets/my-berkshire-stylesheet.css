@@ -1,0 +1,162 @@
+/*Begin Colors Styling*/
+html {
+  background-color: #fff;
+}
+
+h2, h3, h4, p {
+  color: #000080;
+}
+
+a {
+  color: #800080;
+}
+
+a:visited {
+  color: #ff0000;
+}
+
+/*End Colors Styling*/
+
+/****************************************************/
+
+/*Begin Company Name Style*/
+
+header {
+  text-align: center;
+}
+
+h2 {
+  display: inline;
+}
+
+h2.bh {
+  font-size: 30px;
+}
+
+h2.c-name {
+  font-size: 18px;
+  margin-left: -4px;
+}
+
+h2.inc {
+  font-size: 14px;
+}
+
+/*End Company Name Style*/
+
+/****************************************************/
+
+/*Begin address styling*/
+h4 {
+  margin-top: 0;
+  font-size: 13px;
+}
+
+header h3.ohp {
+  margin-top: -16px;
+  font-size: 16px;
+}
+
+/*End address styling*/
+
+/****************************************************/
+
+/*Begin Link Styling*/
+#navi {
+  width: 90%;
+  padding-left: 120px;
+}
+
+#navi .col-1 {
+  float: left;
+}
+
+#navi .col-2 {
+  float: right;
+  padding-right: 90px;
+}
+
+#navi li a {
+  font-size: 16px;
+}
+
+#navi li {
+  font-size: 10px;
+  color: #000080;
+  margin-bottom: 25px;
+}
+
+/*End Link Styling*/
+
+/*Clearing Horizontal Lines*/
+
+div.hr {
+  width: 100%;
+  border: 0.5px solid #515151;
+  clear: both;
+}
+
+hr {
+  clear: both;
+}
+/*End Clearing Horizontal Lines*/
+
+/*Begin styling Geico Area*/
+
+div.g-area {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 10px;
+}
+
+div.g-area img {
+  padding-top: 20px;
+}
+
+div.g-area p {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+/*End Styling Geico Area*/
+
+/*Begin Contact Section*/
+p.contact-section {
+  font-size: 13px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/*End Contact Section*/
+
+/*Begin Footer Font*/
+p.footer-text {
+  font-size: 10px;
+}
+/*End Footer Font*/
+
+/*Begin Footer Link*/
+
+footer {
+  margin-top: 14px;
+}
+
+/*End Footer Link*/
+
+
+
+/**************REFLECTION*****************/
+/*
+
+What is important to know when linking an external file (like a stylesheet) to an HTML file?
+
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+
+What CSS did you use to modify the element style (like size, color, etc.)
+
+Did you modify the HTML to include classes or ids? If so, which did you choose and why? If you didn't, how would you know which one to add to your HTML?
+
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+
+*/
+
+/**************END REFLECTION*****************/
