@@ -53,12 +53,12 @@ def mode(array)
   result = []
 
   array.each { |element| element_counts[element] = array.count(element) }
-  highest_value = element_counts.values.sort.max
+  highest_value = element_counts.values.max
 
   all_values = element_counts.select { |key, value| value == highest_value }
   all_values.each { |key, value| result << key }
 
-  result
+  p result
 end
 
 

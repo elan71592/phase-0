@@ -24,65 +24,6 @@ end
 # I used the include?() method to check if the thing_to_find is included in the word on the current iteration.
 # I used .to_i to ensure that I am working with integers when checking the dogs age.
 
-# Person 2
-def my_array_modification_method!(source, thing_to_modify)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-def my_hash_modification_method!(source, thing_to_modify)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-# Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
-
-
-# Person 3
-def my_array_sorting_method(source)
-  source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-def my_hash_sorting_method(source)
-   source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-# Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
-
-
-# Person 4
-def my_array_deletion_method!(source, thing_to_delete)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-def my_hash_deletion_method!(source, thing_to_delete)
-  source.dup # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-# Identify and describe the Ruby method(s) you implemented.
-#
-#
-#
-
-
-# Person 5
-def my_array_splitting_method(source)
-  source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-def my_hash_splitting_method(source, age)
-  source # This line is here to make sure all tests initially fail. Delete it when you begin coding.
-end
-
-# Identify and describe the Ruby method(s) you implemented.
-# I used each method to iterate through the contents of the array being passed in and the hash as well
-# I used .to_s in the first method because there were numbers being passed in and it had to be converted to a string before checking anything.
-# I used the include?() method to check if the thing_to_find is included in the word on the current iteration.
-# I used .to_i to ensure that I am working with integers when checking the dogs age.
 
 # Release 1: Identify and describe the Ruby method you implemented. Teach your
 # accountability group how to use the methods.
