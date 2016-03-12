@@ -80,25 +80,13 @@
 
 # 2. Refactored Solution
 def separate_comma(num)
-  num_string = num.to_s
-  num_arr = []
-  result = ""
+  result = num.to_s
+  commas = num.to_s.length / 3
+  idx = -4
 
-  num_string.each_char { |char| num_arr << char }
+  until result.count(",") == commas; result.insert(idx, ","); idx -= 4 end
+  if result[0] == ","; result = result[1..-1] end
 
-  if num.to_i < 1000
-    return num.to_s
-  elsif num.to_i < 9999
-    num_arr.each_with_index {|number, idx| if idx == 0; result << number + ","; else result << number end}
-  elsif num.to_i < 99999
-    num_arr.each_with_index {|number, idx| if idx == 1; result << number + ","; else result << number end}
-  elsif num.to_i < 999999
-    num_arr.each_with_index {|number, idx| if idx == 2; result << number + ","; else result << number end}
-  elsif num.to_i < 9999999
-    num_arr.each_with_index {|number, idx| if idx == 0 || idx == 3; result << number + ","; else result << number end}
-  elsif num.to_i < 99999999
-    num_arr.each_with_index {|number, idx| if idx == 1 || idx == 4; result << number + ","; else result << number end}
-  end
   p result
 end
 
