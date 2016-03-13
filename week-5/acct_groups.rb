@@ -57,19 +57,29 @@ def acct_groups(names)
   groups = []
   names.shuffle.each_slice(4) { |group| groups << group }
   idx = 1
-  if groups[-1].count < 3
-    groups[-1].each do |person|
-      groups[-2] << person
+  if groups.count == 1
+    groups.each do |group|
+      puts
+      puts "Group 1: "
+      group.each do |person|
+        puts person
+      end
     end
-    groups.pop
-  end
-  groups.each do |group|
-    puts
-    puts "Group #{idx}: "
-    group.each do |person|
-      puts person
+  else
+    if groups[-1].count < 3
+      groups[-1].each do |person|
+        groups[-2] << person
+      end
+      groups.pop
     end
-    idx += 1
+    groups.each do |group|
+      puts
+      puts "Group #{idx}: "
+      group.each do |person|
+        puts person
+      end
+      idx += 1
+    end
   end
 end
 
