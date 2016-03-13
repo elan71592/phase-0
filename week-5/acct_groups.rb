@@ -59,7 +59,6 @@ def acct_groups(names)
   idx = 1
   if groups.count == 1
     groups.each do |group|
-      puts
       puts "Group 1: "
       puts "------------------"
       group.each do |person|
@@ -74,6 +73,7 @@ def acct_groups(names)
       groups.pop
     end
     groups.each do |group|
+      puts
       puts "Group #{idx}: "
       puts "------------------"
       group.each do |person|
