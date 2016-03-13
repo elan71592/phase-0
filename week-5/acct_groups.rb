@@ -54,34 +54,16 @@
 
 # Refactored Solution:
 def acct_groups(names)
-  acct_groups = {}
-  names_list = Array.new(names).shuffle
-  int = 1
-  idx = 0
-
-  while idx != names.count
-    if acct_groups.empty?
-      acct_groups["Group " + int.to_s] = [names_list.pop]
-    elsif acct_groups["Group " + int.to_s].count < 5
-      acct_groups["Group " + int.to_s] << names_list.pop
-    else
-      if names_list.count == 2
-        if acct_groups["Group " + int.to_s].count == 5
-          acct_groups["Group " + int.to_s] << names_list.pop
-          acct_groups["Group " + (int - 1).to_s] << names_list.pop
-        end
-      elsif names_list.count == 1
-        if acct_groups["Group " + int.to_s].count == 5
-          acct_groups["Group " + int.to_s] << names_list.pop
-        end
-      else
-        int += 1
-        acct_groups["Group " + int.to_s] = [names_list.pop]
-      end
+  groups = []
+  names.shuffle.each_slice(4) { |group| groups << group }
+  idx = 1
+  if groups[-1].count < 3
+    groups[-1].each do |person|
+      groups[-2] << person
     end
-    idx += 1
+    groups.pop
   end
-  acct_groups.each { |group, people| puts "#{group}: #{people}" }
+  groups.each {|group| puts "Group #{idx}: #{group}"; idx += 1 }
 end
 
 names = ["Aarthi Gurusami", "Abid Ramay", "Adam Zmudzinski", "Alec Hendrickson", "Alex Wen", "Alicia Briceland", "Allison paul", "Andrey Slonski", "Anna Lansfjord", "Ben Sanecki", "Ben Flores", "Buck Melton", "Caitlin Hoffman", "Carlos Gonzalez", "Chand Nirankari", "Ché Sanders", "Chris Henderson", "Chris Lamkin", "Christyn Budzyna", "Dan Park", "David Ramirez", "David Tao", "David Walden", "Bill Deng", "Denny Jovic", "Daniel Deutsch", "Dexter Moran", "Diana Ozemebhoya Eromosele", "Dominick Lombardo", "Elan Kvitko","Elizabeth Alexander", "Elizabeth Brown", "Ena Bekanovic", "Esther Leytush", "Evan Druce", "Frank Lam", "Gabo", "Jack Thatcher", "Jason Milfred", "John Colella", "Jonathan Kaplan", "Kelson Adams", "Kristal Lam", "Kunal Patel", "Leland Meiners", "Liam Binell", "Lisa Buch", "Lisa Dannewitz", "Lyudmila Arinich", "Mohamed Monekata", "Parker Smathers", "Patrick DeWitte", "Renan Martins", "Riley", "Robin Soubry", "James Robinson", "Samantha Holmes", "Scott Southard", "Shaun R Sweet", "Shin Wang", "Sibel Ergener", "Simon Thomas", "Talal Talhouk", "Ted Bogin", "Traci Fong", "Victoria Solorzano"]
