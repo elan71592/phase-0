@@ -1,14 +1,20 @@
 # Class Warfare, Validate a Credit Card Number
 
 
-# I worked on this challenge [by myself, with: ].
-# I spent [#] hours on this challenge.
+# I worked on this challenge with: Ena.
+# I spent [2] hours on this challenge.
 
 # Pseudocode
 
-# Input:
-# Output:
+# Input: Set of credit card numbers
+# Output: Boolean statement regarding validity of credit card
 # Steps:
+# -Step 1: Set up intialize method within class
+# -Step 2: Define check_card method
+# -Step 3: Raise argument error if set of numbers not equal to 16
+# -Step 4: Double every other digit starting from the second to last
+# -Step 5: Break up every double digit along with the untouched digits and sum them together
+# -Step 6: If sum is not equally divisible by ten, retun false validity, otherwise return true validity
 
 
 # Initial Solution
@@ -99,3 +105,15 @@ end
 
 
 # Reflection
+
+# What was the most difficult part of this challenge for you and your pair?
+
+  # - For me I think the most challenging part was splitting up the two categories of numbers to double and the other numbers left over. For a while we were stuck on the idea of modifying the array using delete_at(index) while iterating over the numbers this way only the ones left over needed would be in the original array but later found the select method works the best!
+
+# What new methods did you find to help you when you refactored?
+
+  # - The chars method was awesome instead of using split(//). I also ran a speed test and the chars method was slightly faster. It doesn't really make a difference but still it's nice.
+
+# What concepts or learnings were you able to solidify in this challenge?
+
+  # - I think I got a really solid understanding of working with arrays and indexes and love how the select method works!
