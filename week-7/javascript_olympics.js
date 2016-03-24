@@ -37,7 +37,7 @@ var winners = [{
 // First function creates a new property:
 
 function winProperty(winners) {
-  for ( idx = 0; idx < winners.length; idx++ ) {
+  for ( var idx = 0; idx < winners.length; idx++ ) {
     winners[idx].win = winners[idx].name + " won the " + winners[idx].eventWon;
   };
   console.log(winners);
