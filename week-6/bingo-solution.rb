@@ -138,51 +138,52 @@
 # Refactored Solution
 class BingoBoard
 
-  def initialize(board)
-    @bingo_board = board
-    @random_letters = ["B", "I", "N", "G", "O"]
+  def initialize
+    @letters = ["B", "I", "N", "G", "O"]
+    @bingo_board = []
+  end
+
+  def call
+    @random_letter = @letters.index(@letters.sample)
     @random_num = rand(1..100)
   end
 
-  def check_not_legal(letter = @random_letters.sample, number = rand(1..100))
+  def create_legal
+    idx = 0
+    start = 15
+
+    5.times do
+      row = (start - 14..start).to_a.shuffle.sample(5)
+      @bingo_board[ idx ] = Array.new(row)
+      start += 15
+      idx += 1
+    end
+    return @bingo_board
+  end
+
+  def create_free
+    idx = 0
+
+    5.times do
+      row = (1..99).to_a.shuffle.sample(5)
+      @bingo_board[ idx ] = Array.new(row)
+      idx += 1
+    end
+  end
+
+
+  def check_not_legal
     @bingo_board.each_with_index do |row,idx|
-      case letter.downcase
-      when "b"
-        if row[0] == number then @bingo_board[idx][0] = "X" end
-      when "i"
-        if row[1] == number then @bingo_board[idx][1] = "X" end
-      when "n"
-        if row[2] == number then @bingo_board[idx][2] = "X" end
-      when "g"
-        if row[3] == number then @bingo_board[idx][3] = "X" end
-      when "o"
-        if row[4] == number then @bingo_board[idx][4] = "X" end
-      else
-        raise ArgumentError.new("Sorry we did not recognize your entry to be valid. Please make a new entry!")
+      if row[ @random_letter ] == @random_num
+        @bingo_board[ idx ][ @random_letter ] = "X"
       end
     end
   end
 
-  def check_legal(letter = @random_letters.sample, number = 0)
+  def check_legal
     @bingo_board.each_with_index do |row,idx|
-      case letter.downcase
-      when "b"
-        if number == 0; number = rand(1..15) end
-        if row[0] == number then @bingo_board[idx][0] = "X" end
-      when "i"
-        if number == 0; number = rand(16..30) end
-        if row[1] == number then @bingo_board[idx][1] = "X" end
-      when "n"
-        if number == 0; number = rand(31..45) end
-        if row[2] == number then @bingo_board[idx][2] = "X" end
-      when "g"
-        if number == 0; number = rand(46..60) end
-        if row[3] == number then @bingo_board[idx][3] = "X" end
-      when "o"
-        if number == 0; number = rand(61..75) end
-        if row[4] == number then @bingo_board[idx][4] = "X" end
-      else
-        raise ArgumentError.new("Sorry we did not recognize your entry to be valid. Please make a new entry!")
+      if row[ @random_letter ] == @random_num
+        @bingo_board[ idx ][ @random_letter ] = "X"
       end
     end
   end
@@ -230,58 +231,6 @@ end
 
 
 #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
-board = [[47, 44, 71, 8, 88],
-        [22, 69, 75, 65, 73],
-        [83, 85, 97, 89, 57],
-        [25, 31, 96, 68, 51],
-        [75, 70, 54, 80, 83]]
-
-legal_bingo_board = [
-                      [0,0,0,0,0],
-                      [0,0,0,0,0],
-                      [0,0," ",0,0],
-                      [0,0,0,0,0],
-                      [0,0,0,0,0]
-                      ]
-
-legal_bingo_board.each_with_index do |row, row_position|
-  row.each_index do |number|
-    case number
-    when 0
-      random_number = rand(1..15)
-      until legal_bingo_board.flatten.include?(random_number) == false
-        random_number = rand(1..15)
-      end
-      legal_bingo_board[row_position][number] = random_number
-    when 1
-      random_number = rand(16..30)
-      until legal_bingo_board.flatten.include?(random_number) == false
-        random_number = rand(16..30)
-      end
-      legal_bingo_board[row_position][number] = random_number
-    when 2
-      random_number = rand(31..45)
-      until legal_bingo_board.flatten.include?(random_number) == false
-        random_number = rand(31..45)
-      end
-      unless legal_bingo_board[row_position][number] != 0
-        legal_bingo_board[row_position][number] = random_number
-      end
-    when 3
-      random_number = rand(46..60)
-      until legal_bingo_board.flatten.include?(random_number) == false
-        random_number = rand(46..60)
-      end
-      legal_bingo_board[row_position][number] = random_number
-    when 4
-      random_number = rand(61..75)
-      until legal_bingo_board.flatten.include?(random_number) == false
-        random_number = rand(61..75)
-      end
-      legal_bingo_board[row_position][number] = random_number
-    end
-  end
-end
 
 puts "WELCOME TO BINGO!"
 
@@ -309,21 +258,17 @@ def user_input
 end
 
 if user_input == "legal"
-  new_game = BingoBoard.new(legal_bingo_board)
+  new_game = BingoBoard.new
+  new_game.create_legal
+  new_game.call
   new_game.check_legal
   new_game.display
-
-  new_game_2 = BingoBoard.new(legal_bingo_board)
-  new_game_2.check_legal("b", 4)
-  new_game_2.display
 else
-  new_game = BingoBoard.new(board)
+  new_game = BingoBoard.new
+  new_game.create_free
+  new_game.call
   new_game.check_not_legal
   new_game.display
-
-  new_game_2 = BingoBoard.new(board)
-  new_game_2.check_not_legal("n", 97)
-  new_game_2.display
 end
 
 
