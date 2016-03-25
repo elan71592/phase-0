@@ -57,15 +57,15 @@ function athletes(winners) {
 athletes(winners);
 
 // Jumble your words
-function reverseString(str) {
-  tempStringArray = str.split("").reverse();
-  result = ""
 
-  tempStringArray.forEach(function(char) {
-    result += char;
-  });
+
+function reverseString(word) {
+  var result = "";
+  for ( var idx = word.length - 1; idx > -1; idx-- ) {
+    result += word[idx];
+  }
   console.log(result);
-};
+}
 
 reverseString("Jumble Your Words!");
 
@@ -83,7 +83,7 @@ console.log(numbers.filter(even));
 // Or you can do the following:
 
 function evenManual(numbers) {
-  result = [];
+  var result = [];
 
   numbers.forEach(function(number) {
     if ( number % 2 === 0 ) {
@@ -98,8 +98,8 @@ evenManual(numbers);
 // Or for fun we did this too:
 
 function forEven(numbers) {
-  result = []
-  for ( idx = 0; idx < numbers.length; idx++ ) {
+  var result = []
+  for ( var idx = 0; idx < numbers.length; idx++ ) {
     if ( numbers[ idx ] % 2 === 0 ) {
       result.push(numbers[ idx ]);
     };
@@ -128,5 +128,13 @@ console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps
 // Reflection
 
 // What JavaScript knowledge did you solidify in this challenge?
+
+  // I definitely solidified my understanding of looping through objects and arrays
+
 // What are constructor functions?
+
+  // Constructor functions are similar to what a class is in Ruby. Essentially, you can create an object using literal notation but using constructor functions allows you the freedom to create multiple similar objects and just pass in different properties to it. This is very useful.
+
 // How are constructors different from Ruby classes (in your research)?
+
+  // I'm not quite sure. My understanding of this is very limited as of now but I would assume that a Ruby class is different in the sense that there are many methods you could call as opposed to in JavaScript, properties act more like a hash. In my opinion, if I'm correct, Ruby classes are much more flexible.
