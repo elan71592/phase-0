@@ -74,3 +74,33 @@ function median(arr) {
 }
 
 */
+
+
+// Final Code
+
+function sum(arr) {
+  var sum = 0;
+    arr.forEach(function(num) {
+      sum += num;
+    });
+  return sum;
+};
+
+function mean(arr) {
+  var mean = sum(arr) / arr.length;
+  return mean;
+};
+
+function median(arr) {
+  arr.sort();
+  var median = 0
+
+  if ( arr.length % 2 === 0 ) {
+    var middleNumberOne = (arr[Math.floor(arr.length/2) - 1])
+    var middleNumberTwo = (arr[Math.floor(arr.length/2)])
+    median = (middleNumberOne + middleNumberTwo) / 2;
+  } else {
+    median = arr[ Math.floor(arr.length / 2) ];
+  }
+  return median;
+}
