@@ -68,11 +68,8 @@ gradebook.addScore = function(name, score) { gradebook[name].testScores.push(sco
 gradebook.getAverage = function(name) { return average(gradebook[name].testScores) }
 
 function average(testScores) {
-  var sum = 0;
-  for ( var idx in testScores ) {
-    sum += testScores[idx];
-  };
-  return sum / testScores.length;
+    var sum = testScores.reduce(function(last, first) { return last + first });
+    return sum / testScores.length;
 };
 
 
