@@ -84,7 +84,10 @@ def separate_comma(num)
   commas = num.to_s.length / 3
   idx = -4
 
-  until result.count(",") == commas; result.insert(idx, ","); idx -= 4 end
+  until result.count(",") == commas
+   result.insert(idx, ",")
+   idx -= 4
+  end
   if result[0] == ","; result = result[1..-1] end
 
   p result
