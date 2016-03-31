@@ -58,26 +58,14 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Refactored Solution
 
-var gradebook = {
-    Joseph: {
-      testScores: scores[0]
-    },
-    Susan: {
-      testScores: scores[1]
-    },
-    William: {
-      testScores: scores[2]
-    },
-    Elizabeth: {
-      testScores: scores[3]
-    },
-    addScore: function addScore(name, score) {
-      gradebook[name].testScores.push(score);
-    },
-    getAverage: function getAverage(name) {
-      return average(gradebook[name].testScores);
-    },
-};
+var gradebook = {}
+
+students.forEach(function(name, idx) {
+  gradebook[name] = { testScores: scores[idx] }
+})
+
+gradebook.addScore = function(name, score) { gradebook[name].testScores.push(score) }
+gradebook.getAverage = function(name) { return average(gradebook[name].testScores) }
 
 function average(testScores) {
   var sum = 0;
@@ -94,12 +82,17 @@ function average(testScores) {
 // __________________________________________
 // Reflect
 
+// What did you learn about adding functions to objects?
 
+  // I learned that when adding a function you can actually not even give the function a name. You can just say function and pass in parameters as opposed to naming the function. Calling the object's key, will evaluate the function regardless.
 
+// How did you iterate over nested arrays in JavaScript?
 
+  // I used a forEach loop since it's the easiest. But other loops can get the job done as well.
 
+// Were there any new methods you were able to incorporate? If so, what were they and how did they work?
 
-
+  //  We didn't incorporate any new methods. We used dot notation though to set the function equal to a property and also bracket notation to set the names equal to an object with a property in the forEach loop.
 
 
 // __________________________________________

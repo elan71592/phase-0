@@ -191,14 +191,17 @@ for ( var title in officers ) {
 // Reflection
 
 
+// What did you learn about iterating over nested objects in JavaScript?
 
+  // This challenge was hell to iterate over. It took us FOREVER. I definitely learned a lot though with figuring out what each iteration points to and what the value of each variable in the for..in loops are.
 
+// Were you able to find useful methods to help you with this?
 
+  // There were no useful methods I found rather just the looping was the only thing necessary here.
 
+// What concepts were solidified in the process of working through this challenge?
 
-
-
-
+  // Definitely iterating over the objects and setting new values as I iterate.
 
 // __________________________________________
 // Test Code:  Do not alter code below this line.
