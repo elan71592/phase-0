@@ -497,3 +497,14 @@ end
 # Reflection
 
 
+# What concepts did you review or learn in this challenge?
+
+  # - I definitely learned a lot about hashes and iterating through them because of the numbers to words challenge.
+
+# What is still confusing to you about Ruby?
+
+  # - At this point I think I have a good handle on things for now. I will get back to this if something else pops up in my head that is confusing.
+
+# What are you going to study to get more prepared for Phase 1?
+
+  # - More algorithms and try to get more ruby problems solved in JavaScript.
