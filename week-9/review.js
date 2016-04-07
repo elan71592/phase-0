@@ -79,58 +79,131 @@ add, remove, and update information.
 
 // Bingo Challenge From Ruby Done In JavaScript As Well
 
-var board = [];
-var randomNum = Math.floor(Math.random() * 100);
-var letters = ["B", "I", "N", "G", "O"];
-var randomChar = Math.floor(Math.random() * letters.length);
+// var board = [];
+// var randomNum = Math.floor(Math.random() * 100);
+// var letters = ["B", "I", "N", "G", "O"];
+// var randomChar = Math.floor(Math.random() * letters.length);
 
-function shuffle(arr, groups) {
-  var arrGroup = [];
+// function shuffle(arr, groups) {
+//   var arrGroup = [];
 
-  for ( var idx = 0; idx < groups; idx++ ) {
-    var number = Math.floor(Math.random() * arr.length);
-    arrGroup.push( arr[ number ] );
-    arr.splice(number, 1);
-  }
-  return arrGroup;
+//   for ( var idx = 0; idx < groups; idx++ ) {
+//     var number = Math.floor(Math.random() * arr.length);
+//     arrGroup.push( arr[ number ] );
+//     arr.splice(number, 1);
+//   }
+//   return arrGroup;
+// }
+
+// function createBoard() {
+//   var tempBoard = [];
+//   var start = 1;
+//   var finish = 15;
+
+//   for ( var idx = 0; idx < 5; idx++ ) {
+//     tempBoard.push(new Array());
+//   }
+
+//   tempBoard.forEach(function(row) {
+//     while ( start <= finish ) {
+//       row.push(start);
+//       start++;
+//     }
+//     finish += 15;
+//     board.push(shuffle(row, 5));
+//   });
+// };
+
+// function check(board) {
+//   board.forEach(function(row) {
+//     if ( row[ randomChar ] === randomNum ) {
+//       row[randomChar] = "X";
+//     };
+//   });
+// }
+
+// function print(board) {
+//   console.log("WELCOME TO BINGO");
+//   console.log("================");
+
+//   board.forEach(function(row) {
+//     console.log.apply( console, row );
+//   });
+// };
+
+// createBoard();
+// check(board);
+// print(board);
+
+// Refactor:
+
+function BingoBoard() {
+  this.board = [];
+  this.randomNum = Math.floor(Math.random() * 100);
+  this.randomChar = Math.floor(Math.random() * ["B", "I", "N", "G", "O"].length);
+
+  this.shuffle = function(arr, groups) {
+              var arrGroup = [];
+
+              for ( var idx = 0; idx < groups; idx++ ) {
+                var number = Math.floor(Math.random() * arr.length);
+                arrGroup.push( arr[ number ] );
+                arr.splice(number, 1);
+              }
+              return arrGroup;
+            },
+
+  this.createBoard = function() {
+                  var _this = this
+                  var tempBoard = [];
+                  var start = 1;
+                  var finish = 15;
+
+                  for ( var idx = 0; idx < 5; idx++ ) {
+                    tempBoard.push(new Array());
+                  }
+
+                  tempBoard.forEach(function(row) {
+                    while ( start <= finish ) {
+                      row.push(start);
+                      start++;
+                    }
+                    finish += 15;
+                    _this.board.push(_this.shuffle(row, 5));
+                  });
+                },
+
+  this.check = function() {
+            this.board.forEach(function(row) {
+              if ( row[ BingoBoard.randomChar ] === BingoBoard.randomNum ) {
+                row[BingoBoard.randomChar] = " X";
+              };
+            });
+          },
+
+  this.print = function() {
+            var placeholder = []
+
+            console.log("WELCOME TO BINGO");
+            console.log("================");
+
+            this.board.forEach(function(row, arr, board) {
+              row.forEach(function(number, idx) {
+                if (arr === 0) {
+                  if ( number < 10 ) {
+                    placeholder.push(" " + number)
+                  } else {
+                    placeholder.push(number)
+                  }
+                }
+              });
+              board[0] = placeholder;
+              console.log(board[arr].join(" | "))
+            });
+          }
 }
 
-function createBoard() {
-  var tempBoard = [];
-  var start = 1;
-  var finish = 15;
-
-  for ( var idx = 0; idx < 5; idx++ ) {
-    tempBoard.push(new Array());
-  }
-
-  tempBoard.forEach(function(row) {
-    while ( start <= finish ) {
-      row.push(start);
-      start++;
-    }
-    finish += 15;
-    board.push(shuffle(row, 5));
-  });
-};
-
-function check(board) {
-  board.forEach(function(row) {
-    if ( row[ randomChar ] === randomNum ) {
-      row[randomChar] = "X";
-    };
-  });
-}
-
-function print(board) {
-  console.log("WELCOME TO BINGO");
-  console.log("================");
-
-  board.forEach(function(row) {
-    console.log.apply( console, row );
-  });
-};
-
-createBoard();
-check(board);
-print(board);
+var bingo = new BingoBoard();
+bingo.createBoard();
+bingo.check();
+bingo.print();
